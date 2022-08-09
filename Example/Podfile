@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '10.0'
+
+target 'AJFoundation_Example' do
+  pod 'AJFoundation', :path => '../'
+
+  target 'AJFoundation_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
