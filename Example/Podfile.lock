@@ -1,0 +1,16 @@
+PODS:
+  - AJFoundation (0.1.0)
+
+DEPENDENCIES:
+  - AJFoundation (from `../`)
+
+EXTERNAL SOURCES:
+  AJFoundation:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  AJFoundation: d2e289f9e18eb51fb815b05247cd4299a5cf9675
+
+PODFILE CHECKSUM: 014af821b007aaa0174f856c315d59d6fdc5a952
+
+COCOAPODS: 1.11.3
