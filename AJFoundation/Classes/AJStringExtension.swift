@@ -38,4 +38,11 @@ public extension String {
         return classObj
     }
     
+    func ajBundle() -> Bundle? {
+        guard let path = Bundle.main.path(forResource: self, ofType: "bundle") else {
+            return nil;
+        }
+        let bundle = Bundle.init(path: path)
+        return bundle;
+    }
 }
