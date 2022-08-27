@@ -1,5 +1,5 @@
 //
-//  AJNSObjectExtension.h
+//  NSObjectExtension.h
 //  AJFoundation
 //
 //  Created by 山鹰 on 2022/8/10.
