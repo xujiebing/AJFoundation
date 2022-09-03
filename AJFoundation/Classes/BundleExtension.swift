@@ -14,12 +14,21 @@ public extension Bundle {
         return result
     }
     
-    func ajGetJsonString(resource: String, type: String) throws -> String? {
+    func getJsonString(resource: String, type: String) throws -> String? {
         guard let path = self.path(forResource: resource, ofType: type) else {
             return nil
         }
         let result = try String.init(contentsOfFile: path, encoding: String.Encoding.utf8)
         return result
+    }
+    
+    func getGifData(resource: String, type: String) throws -> Data? {
+        guard let path = self.path(forResource: resource, ofType: type) else {
+            return nil
+        }
+        let url = URL.init(fileURLWithPath: path)
+        let data = try Data.init(contentsOf: url)
+        return data
     }
     
     // 获取设备当前语言的代码
