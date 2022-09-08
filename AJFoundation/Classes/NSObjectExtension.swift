@@ -8,12 +8,34 @@
 public extension NSObject {
     
     /// 获取class类名
-    var ajClassName:String {
+    /// ClassName
+    var className:String {
         get {
-            var name = type(of: self).description()
+            var name = self.classNameDescription
             if name.contains(".") {
                name = name.components(separatedBy: ".")[1]
             }
+            return name
+        }
+    }
+    
+    /// 获取模块名
+    /// ModuleName
+    var moduleName:String {
+        get {
+            var name = self.classNameDescription
+            if name.contains(".") {
+               name = name.components(separatedBy: ".")[0]
+            }
+            return name
+        }
+    }
+    
+    /// 获取class类全名
+    /// ModuleName.ClassName
+    var classNameDescription:String {
+        get {
+            let name = type(of: self).description()
             return name
         }
     }
