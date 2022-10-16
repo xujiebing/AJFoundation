@@ -13,8 +13,8 @@ import Foundation
 /// - Parameter function: 方法名
 /// - Parameter line: 行号
 public func AJLog(_ messages: Any..., file: String = #file, function: String = #function, line: Int = #line) {
-    #if DEBUG
+//    #if DEBUG
     let message = messages.compactMap{ "\($0)" }.joined(separator: " ")
     print("Class: \((file as NSString).lastPathComponent) \nFunc: \(function) \nLine: \(line) \nLog: \(message)\n")
-    #endif
+//    #endif
 }
