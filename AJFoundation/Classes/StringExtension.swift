@@ -45,4 +45,12 @@ public extension String {
         let bundle = Bundle.init(path: path)
         return bundle;
     }
+    
+    var ajLanguage: String {
+        return NSLocalizedString(self, comment: "")
+    }
+    
+    var ajInfoPlistLanguage: String {
+        return NSLocalizedString(self, tableName: "InfoPlist", comment: "")
+    }
 }

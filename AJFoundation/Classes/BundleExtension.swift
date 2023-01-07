@@ -36,4 +36,8 @@ public extension Bundle {
         let preferredLanguage = Bundle.main.preferredLocalizations.first
         return preferredLanguage == "zh-Hans"
     }
+    
+    class var appName: String {
+        return "CFBundleDisplayName".ajInfoPlistLanguage
+    }
 }
