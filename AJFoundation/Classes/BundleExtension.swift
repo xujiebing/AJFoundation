@@ -37,7 +37,14 @@ public extension Bundle {
         return preferredLanguage == "zh-Hans"
     }
     
+    /// App 名称
     class var appName: String {
         return "CFBundleDisplayName".ajInfoPlistLanguage
+    }
+    
+    /// App 版本号
+    class var shortVersion: String {
+        guard let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String else { return "0.0.0" }
+        return version
     }
 }
