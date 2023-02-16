@@ -57,4 +57,32 @@ public extension String {
     static func language(key: String, tableName: String) -> String {
         return NSLocalizedString(key, tableName: tableName, comment: "")
     }
+    
+    /// 判断是否为字母+数字
+    var isLetterWithDigital: Bool {
+        let numberRegex = NSPredicate(format:"SELF MATCHES %@","^.*[0-9]+.*$")
+        let letterRegex = NSPredicate(format:"SELF MATCHES %@","^.*[A-Za-z]+.*$")
+        if numberRegex.evaluate(with: self) && letterRegex.evaluate(with: self) {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    /// 判断输入的字符串是否为数字，不含其它字符
+    var isPurnInt: Bool {
+        let scan: Scanner = Scanner(string: self)
+        var val:Int = 0
+        return scan.scanInt(&val) && scan.isAtEnd
+    }
+    
+    /// 判断是否邮箱格式
+    var isEmail: Bool {
+        return self.contains("@") && self.contains(".")
+    }
+    
+    /// 创建一个Error
+    var error: Error {
+        return AJError(self)
+    }
 }
