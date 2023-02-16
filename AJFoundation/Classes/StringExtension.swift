@@ -53,4 +53,8 @@ public extension String {
     var ajInfoPlistLanguage: String {
         return NSLocalizedString(self, tableName: "InfoPlist", comment: "")
     }
+    
+    static func language(key: String, tableName: String) -> String {
+        return NSLocalizedString(key, tableName: tableName, comment: "")
+    }
 }
